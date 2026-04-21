@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   searchable_tree_bag.cpp                            :+:      :+:    :+:   */
@@ -21,8 +21,10 @@ bool searchable_tree_bag::has(int find) const
 	{
 		if (find == s->value)
 			return true;
-		if (find > s->value)
-			s = s
+		else if (find > s->value)
+			s = s->r;
+		else if (find < s->value)
+			s = s->l;
 	}
 	return false;
 }
