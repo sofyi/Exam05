@@ -19,6 +19,7 @@ public:
 	void insert(int *, int);
 	void print() const;
 	void clear();
+	
 };
 
 

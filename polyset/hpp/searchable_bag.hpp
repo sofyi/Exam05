@@ -7,8 +7,10 @@
 #include "bag.hpp"
 
 class searchable_bag : virtual public bag {
-public:
+
+	public:
 	virtual bool has(int) const = 0;
+	virtual Searchable_bag copyMe() = 0;
 };
 
 

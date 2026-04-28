@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   searchable_array_bag.cpp                           :+:      :+:    :+:   */
+/*   set.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slamhaou <slamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 13:04:45 by slamhaou          #+#    #+#             */
-/*   Updated: 2026/04/21 13:12:02 by slamhaou         ###   ########.fr       */
+/*   Created: 2026/04/22 15:57:02 by slamhaou          #+#    #+#             */
+/*   Updated: 2026/04/23 11:36:58 by slamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hpp/searchable_array_bag.hpp"
+#pragma once
 
-bool searchable_array_bag::has(int find) const
+#include "searchable_bag.hpp"
+
+class set
 {
-	for(int i = 0;i < size ; i++)
-		if (data[i] == find)
-			return true;
-	return false;
-}
+	private:
+		searchable_bag *SearchBag;
+		set();
+	public:
+	set(searchable_bag &obj);
+	set(set &obj);
+	~set();
+	set& operator=(set & obj);
+	void insert(int);
+	void insert(int *, int);
+	void print() const;
+	void clear();
+	bool has(int) const;
+	searchable_bag& get_bag() const;
+};

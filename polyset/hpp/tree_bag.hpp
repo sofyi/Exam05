@@ -26,6 +26,7 @@ public:
 	virtual void insert(int *array, int size);
 	virtual void print() const;
 	virtual void clear();
+	
 private:
 	static void destroy_tree(node *);
 	static void print_node(node *);
